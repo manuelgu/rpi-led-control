@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Server Error - GitHub Education</title>
+  <title>WIP</title>
   <style type="text/css">
     body {
       margin: 0;
