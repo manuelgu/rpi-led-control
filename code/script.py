@@ -28,7 +28,7 @@ def fetch():
 		else:
 			print "Something went wrong.."
 
-	time.sleep(2)
+	time.sleep(0.1)
 
 
 while True:
