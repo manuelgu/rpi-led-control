@@ -22,6 +22,9 @@ def fetch():
 		elif line == 'green':
 			# set color to green
 			print "Yay, green!"
+		elif line == 'stop':
+			# turn all LEDs off
+			print "Aww, no colors!"
 		else:
 			print "Something went wrong.."
 
