@@ -1,11 +1,18 @@
-#!/usr/bin/python
-
 # This script will fetch the current state of color and try to set it
 # The GPIO hasnt been implemented yet
 
-#import RPi.GPIO as GPIO
+import RPi.GPIO as GPIO
 import urllib2
 import time
+
+redPin = None
+bluePin = None
+greenPin = None
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(redPin, GPIO.OUT)
+GPIO.setup(bluePin, GPIO.OUT)
+GPIO.setup(greenPin, GPIO.OUT)
 
 def fetch():
 	# do stuff 
