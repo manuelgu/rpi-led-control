@@ -5,9 +5,15 @@ import RPi.GPIO as GPIO
 import urllib2
 import time
 
+<<<<<<< HEAD
 redPin = 18
 yellowPin = 22
 greenPin = 12
+=======
+redPin = None
+yellowPin = None
+greenPin = None
+>>>>>>> origin/master
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(redPin, GPIO.OUT)
@@ -46,7 +52,11 @@ def fetch():
 
 def empty():
 	GPIO.output(redPin, False)
+<<<<<<< HEAD
 	GPIO.output(yellowPin, False)
+=======
+	GPIO.output(bluePin, False)
+>>>>>>> origin/master
 	GPIO.output(greenPin, False)
 
 while True:
