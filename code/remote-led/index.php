@@ -28,7 +28,7 @@ file_put_contents($file, $current);
 	<form action="index.php" method="GET" name="ledform">
 		<input type="submit" value="red" name="color" style="color:red">
 		<br>
-		<input type="submit" value="blue" name="color" style="color:blue">
+		<input type="submit" value="yellow" name="color" style="color:yellow">
 		<br>
 		<input type="submit" value="green" name="color" style="color:green">
 		<br>

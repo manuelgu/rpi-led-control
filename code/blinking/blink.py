@@ -1,16 +1,30 @@
 import RPi.GPIO as GPIO
 import time
 
+redPin = 18 
+yellowPin = 22
+greenPin = 12
+
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(17, GPIO.OUT)
+GPIO.setup(redPin, GPIO.OUT)
+GPIO.setup(yellowPin, GPIO.OUT)
+GPIO.setup(greenPin, GPIO.OUT)
 
 def blink(numTimes, speed):
     for i in range(0,numTimes):
         print "Iteration " + str(i+1)
-        GPIO.output(17, True)
+        GPIO.output(redPin, True)
         time.sleep(speed)
-        GPIO.output(17, False)
+        GPIO.output(redPin, False)
         time.sleep(speed)
+	GPIO.output(yellowPin, True)
+	time.sleep(speed)
+	GPIO.output(yellowPin, False)
+	time.sleep(speed)
+	GPIO.output(greenPin, True)
+	time.sleep(speed)
+	GPIO.output(greenPin, False)
+	time.sleep(speed)
     print "Finished"
     GPIO.cleanup()
 
