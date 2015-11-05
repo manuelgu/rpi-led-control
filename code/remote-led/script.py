@@ -26,7 +26,7 @@ def fetch():
 			empty()
 			GPIO.output(redPin, True)
 		elif line == 'yellow':
-			# set color to blue
+			# set color to yellow
 			print "Yay, yellow!"
 			empty()
 			GPIO.output(yellowPin, True)
