@@ -1,0 +1,12 @@
+color.txt
+index.php
+ls.txt
+path.txt
+run.sh
+saybooting.sh
+saygreen.sh
+sayred.sh
+saystop.sh
+saywrong.sh
+sayyellow.sh
+script.py

@@ -1,24 +1,25 @@
 # This script will fetch the current state of color and try to set it
-# The GPIO hasnt been implemented yet
+# Additionally it will tell you the current color using TTS
 
 import RPi.GPIO as GPIO
 import urllib2
 import time
+import subprocess
 
-<<<<<<< HEAD
 redPin = 18
 yellowPin = 22
 greenPin = 12
-=======
-redPin = None
-yellowPin = None
-greenPin = None
->>>>>>> origin/master
+
+sayColor = True
+
+current = "nothing"
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(redPin, GPIO.OUT)
 GPIO.setup(yellowPin, GPIO.OUT)
 GPIO.setup(greenPin, GPIO.OUT)
+
+subprocess.call('./saybooting.sh')
 
 def fetch():
 	# do stuff 
@@ -28,38 +29,59 @@ def fetch():
 		
 		if line == 'red':
 			# set color to red
-			print "Yay, red!"
-			empty()
-			GPIO.output(redPin, True)
+			global current
+			if current != line:
+				
+				print "Yay, red!"
+				empty()
+				GPIO.output(redPin, True)
+				if sayColor:
+					subprocess.call('./sayred.sh')
+				current = line
 		elif line == 'yellow':
 			# set color to yellow
-			print "Yay, yellow!"
-			empty()
-			GPIO.output(yellowPin, True)
+			global current
+			if current != line:
+
+				print "Yay, yellow!"
+				empty()
+				GPIO.output(yellowPin, True)
+				if sayColor:
+					subprocess.call('./sayyellow.sh')
+				current = line
 		elif line == 'green':
 			# set color to green
-			print "Yay, green!"
-			empty()
-			GPIO.output(greenPin, True)
+			global current
+			if current != line:
+
+				print "Yay, green!"
+				empty()
+				GPIO.output(greenPin, True)
+				if sayColor:
+					subprocess.call('./saygreen.sh')
+				current = line
 		elif line == 'stop':
 			# turn all LEDs off
-			print "Aww, no colors!"
-			empty()
+			global current
+			if current != line:
+
+				print "Aww, no colors!"
+				empty()
+				if sayColor:
+					subprocess.call('./saystop.sh')
+				current = line
 		else:
 			print "Something went wrong.."
-
-	time.sleep(0.1)
+			if sayColor:
+				subprocess.call('./saywrong.sh')
+			empty()
+			current = "nothing"
+	time.sleep(0.2)
 
 def empty():
 	GPIO.output(redPin, False)
-<<<<<<< HEAD
 	GPIO.output(yellowPin, False)
-=======
-	GPIO.output(bluePin, False)
->>>>>>> origin/master
 	GPIO.output(greenPin, False)
 
 while True:
 	fetch()
-
-
